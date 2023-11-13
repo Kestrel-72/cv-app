@@ -1,6 +1,6 @@
-import FormMainPart from "./FormMainPart"
+import FormMainPart from "../FormMainPart"
 
-export default function FormMain() {
+export default function FormMainPersonal() {
    return (
       <div className="form-main">
          <FormMainPart label="Full Name" placeholder="John Doe"/>

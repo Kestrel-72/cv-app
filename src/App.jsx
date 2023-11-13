@@ -1,13 +1,30 @@
-import FormSection from "./FormSection";
+import FormHeaderTitle from "./FormHeaderTitle";
+import FormMainPersonal from "./form-main-categories/FormMainPersonal";
+import FormSection from "./FormSection.jsx";
 
 export default function App() {
    let sections = [
       {
-         name: 'Personal details'
+         title: <FormHeaderTitle title='Personal details'/>,
+         main: <FormMainPersonal/>,
+         isPicked: true,
+         isActive: true
+      },
+      {
+         title: <FormHeaderTitle title='Work experience'/>,
+         main: <FormMainPersonal/>,
+         isPicked: false,
+         isActive: false
+      },
+      {
+         title: <FormHeaderTitle title='Education'/>,
+         main: <FormMainPersonal/>,
+         isPicked: false,
+         isActive: false
       }
    ];
 
    return (
-      <FormSection title={sections[0].name} index={sections.length} />
+      <FormSection sections={sections}/>
    );
 }

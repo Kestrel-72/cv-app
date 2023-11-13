@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function FormHeader( {title} ) {
+export default function FormHeaderTitle( {title} ) {
    return (
       <div className="form-header">
          <h1>{title}</h1>
@@ -8,6 +8,6 @@ export default function FormHeader( {title} ) {
    )
 }
 
-FormHeader.propTypes = {
+FormHeaderTitle.propTypes = {
    title: PropTypes.string.isRequired
 }
