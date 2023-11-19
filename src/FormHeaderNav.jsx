@@ -1,18 +1,33 @@
 import PropTypes from 'prop-types';
 
-export default function FormHeaderNav( {index} ) {
+export default function FormHeaderNav( {sections, activeSectionIndex} ) {
    const backButton = <button>Back</button>;
    const nextButton = <button>Next</button>;
 
-   return (
-      <div className="back-next-buttons">
-         {index > 0 ? backButton : null}
-         {nextButton}
-      </div>
-   )
-   
+   if (activeSectionIndex === 0) {
+      return (
+         <div className="form-nav">
+            {nextButton}
+         </div>
+      )
+   } else if (activeSectionIndex === sections.length - 1) {
+      return (
+         <div className="form-nav">
+            {backButton}
+         </div>
+      )
+   } else {
+      return (
+         <div className="form-nav">
+            {backButton}
+            {nextButton}
+         </div>
+      )
+   }
+
 }
 
 FormHeaderNav.propTypes = {
-   index: PropTypes.number.isRequired,
+   sections: PropTypes.array.isRequired,
+   activeSectionIndex: PropTypes.number.isRequired
 }

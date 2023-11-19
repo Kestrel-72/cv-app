@@ -25,7 +25,7 @@ export default function App() {
          index: 2
       }
    ];
-   let activeSectionIndex = 2;
+   let activeSectionIndex = 0;
 
    return (
       <FormSection sections={sections} activeSectionIndex={activeSectionIndex}/>
