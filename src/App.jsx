@@ -15,8 +15,24 @@ export default function App() {
          phone: ''
       }
    );
+   const [workExperienceInfo, setWorkExperienceInfo] = useState(
+      {
+         companyName: '',
+         jobTitle: '',
+         duration: '',
+         address: ''
+      }
+   );
+   const [educationInfo, setEducationInfo] = useState(
+      {
+         institutionName: '',
+         degree: '',
+         graduationYear: ''
+      }
+   );
    console.log(personalInfo)
-
+   console.log(workExperienceInfo)
+   console.log(educationInfo)
    // eslint-disable-next-line no-unused-vars
    const sections = 
       [
@@ -31,13 +47,19 @@ export default function App() {
          },
          {
             title: <FormHeaderTitle title='Work experience'/>,
-            main: <FormMainWorkExperience/>,
+            main: <FormMainWorkExperience
+               workExperienceInfo={workExperienceInfo} 
+               setWorkExperienceInfo={setWorkExperienceInfo}
+            />,
             isPicked: true,
             index: 1
          },
          {
             title: <FormHeaderTitle title='Education'/>,
-            main: <FormMainEducation/>,
+            main: <FormMainEducation
+               educationInfo={educationInfo}
+               setEducationInfo={setEducationInfo}
+            />,
             isPicked: true,
             index: 2
          }
