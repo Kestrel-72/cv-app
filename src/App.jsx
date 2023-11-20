@@ -6,12 +6,26 @@ import FormMainWorkExperience from "./form-main-categories/FormMainWorkExperienc
 import { useState } from "react";
 
 export default function App() {
+
+   const [personalInfo, setPersonalInfo] = useState(
+      {
+         fullName: '',
+         jobTitle: '',
+         email: '',
+         phone: ''
+      }
+   );
+   console.log(personalInfo)
+
    // eslint-disable-next-line no-unused-vars
-   const [sections, setSections] = useState(
+   const sections = 
       [
          {
             title: <FormHeaderTitle title='Personal details'/>,
-            main: <FormMainPersonal/>,
+            main: <FormMainPersonal
+               personalInfo={personalInfo}
+               setPersonalInfo={setPersonalInfo}
+            />,
             isPicked: true,
             index: 0
          },
@@ -27,10 +41,8 @@ export default function App() {
             isPicked: true,
             index: 2
          }
-      ]
-   );
+      ];
    const [activeSectionIndex, setActiveSectionIndex] = useState(0);
-
    return (
       <FormSection 
          sections={sections} 
