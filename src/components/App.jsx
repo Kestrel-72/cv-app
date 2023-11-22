@@ -1,8 +1,8 @@
 import FormHeaderTitle from "./FormHeaderTitle";
-import FormMainPersonal from "./form-main-categories/FormMainPersonal";
+import FormMainPersonal from "/src/components/form-main-categories/FormMainPersonal";
 import FormSection from "./FormSection.jsx";
-import FormMainEducation from "./form-main-categories/FormMainEducation";
-import FormMainWorkExperience from "./form-main-categories/FormMainWorkExperience";
+import FormMainEducation from "/src/components/form-main-categories/FormMainEducation";
+import FormMainWorkExperience from "/src/components/form-main-categories/FormMainWorkExperience";
 import { useState } from "react";
 
 export default function App() {
