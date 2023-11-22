@@ -4,6 +4,7 @@ import FormSection from "./FormSection.jsx";
 import FormMainEducation from "/src/components/form-main-categories/FormMainEducation";
 import FormMainWorkExperience from "/src/components/form-main-categories/FormMainWorkExperience";
 import { useState } from "react";
+import AllForms from "./AllForms";
 
 export default function App() {
 
@@ -37,6 +38,7 @@ export default function App() {
    const sections = 
       [
          {
+            titleT: 'Personal details',
             title: <FormHeaderTitle title='Personal details'/>,
             main: <FormMainPersonal
                personalInfo={personalInfo}
@@ -46,6 +48,7 @@ export default function App() {
             index: 0
          },
          {
+            titleT: 'Work experience',
             title: <FormHeaderTitle title='Work experience'/>,
             main: <FormMainWorkExperience
                workExperienceInfo={workExperienceInfo} 
@@ -55,6 +58,7 @@ export default function App() {
             index: 1
          },
          {
+            titleT: 'Education',
             title: <FormHeaderTitle title='Education'/>,
             main: <FormMainEducation
                educationInfo={educationInfo}
@@ -66,10 +70,17 @@ export default function App() {
       ];
    const [activeSectionIndex, setActiveSectionIndex] = useState(0);
    return (
-      <FormSection 
-         sections={sections} 
-         activeSectionIndex={activeSectionIndex} 
-         setActiveSectionIndex={setActiveSectionIndex}
-      />
+      <div className="app">
+         <AllForms 
+            sections={sections}
+            setActiveSectionIndex={setActiveSectionIndex}
+         />
+         <FormSection 
+            sections={sections} 
+            activeSectionIndex={activeSectionIndex} 
+            setActiveSectionIndex={setActiveSectionIndex}
+         />
+      </div>
+      
    );
 }
