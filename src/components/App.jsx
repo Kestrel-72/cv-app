@@ -17,12 +17,15 @@ export default function App() {
       }
    );
    const [workExperienceInfo, setWorkExperienceInfo] = useState(
-      {
-         companyName: '',
-         jobTitle: '',
-         duration: '',
-         address: ''
-      }
+      [
+         {
+            companyName: '',
+            jobTitle: '',
+            duration: '',
+            address: '',
+            index: 0
+         }
+      ]
    );
    const [educationInfo, setEducationInfo] = useState(
       {
@@ -31,9 +34,9 @@ export default function App() {
          graduationYear: ''
       }
    );
-   console.log(personalInfo)
-   console.log(workExperienceInfo)
-   console.log(educationInfo)
+   // console.log(personalInfo)
+   // console.log(workExperienceInfo)
+   // console.log(educationInfo)
    // eslint-disable-next-line no-unused-vars
    const sections = 
       [
