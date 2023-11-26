@@ -28,11 +28,15 @@ export default function App() {
       ]
    );
    const [educationInfo, setEducationInfo] = useState(
-      {
-         institutionName: '',
-         degree: '',
-         graduationYear: ''
-      }
+      [
+         {
+            institutionName: '',
+            degree: '',
+            graduationYear: '',
+            id: 0
+         }
+      ]
+      
    );
    // console.log(personalInfo)
    // console.log(workExperienceInfo)
