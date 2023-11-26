@@ -10,6 +10,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
    }
    const workItems = workExperienceInfo.map(item =>
       <div className="form-general" key={item.id}>
+         <h2 className='form-header'>Job {item.id + 1}</h2>
          <div className='form-main'>
             <div className="form-main-part">
                <label>Company name</label>

@@ -10,6 +10,7 @@ export default function FormMainEducation({educationInfo, setEducationInfo}) {
    }
    const educationItems = educationInfo.map(item => 
       <div className="form-general" key={item.id}>
+         <h2 className='form-header'>Degree {item.id + 1}</h2>
          <div className="form-main">
             <div className="form-main-part">
                <label>Educational institution</label>
