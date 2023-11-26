@@ -4,19 +4,19 @@ import deleteForm from '../deleteForm';
 export default function FormMainWorkExperience({workExperienceInfo, setWorkExperienceInfo}) {
    function handleChange(e) {
       let newArray = [...workExperienceInfo];
-      let currentItem = newArray[e.target.dataset.index];
-      newArray[currentItem.index][e.target.name] = e.target.value;
+      let currentItem = newArray[e.target.dataset.id];
+      newArray[currentItem.id][e.target.name] = e.target.value;
       setWorkExperienceInfo(newArray);
    }
    const workItems = workExperienceInfo.map(item =>
-      <div className="form-general" key={item.index}>
+      <div className="form-general" key={item.id}>
          <div className='form-main'>
             <div className="form-main-part">
                <label>Company name</label>
                <input type="text" 
                   placeholder="Yandex"
                   name="companyName"
-                  data-index={item.index}
+                  data-id={item.id}
                   value={item.companyName}
                   onChange={handleChange}
                />
@@ -26,7 +26,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
                <input type="text" 
                   placeholder="Dev"
                   name="jobTitle"
-                  data-index={item.index}
+                  data-id={item.id}
                   value={item.jobTitle}
                   onChange={handleChange}
                />
@@ -36,7 +36,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
                <input type="text" 
                   placeholder="2021-2023"
                   name="duration"
-                  data-index={item.index}
+                  data-id={item.id}
                   value={item.duration}
                   onChange={handleChange}
                />
@@ -46,7 +46,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
                <input type="text" 
                   placeholder="Moscow"
                   name="address"
-                  data-index={item.index}
+                  data-id={item.id}
                   value={item.address}
                   onChange={handleChange}
                />
@@ -55,7 +55,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
          <button 
             className="delete-exp"
             onClick={() => {
-               setWorkExperienceInfo(deleteForm(workExperienceInfo, item.index));
+               setWorkExperienceInfo(deleteForm(workExperienceInfo, item.id));
             }}
          >
             Delete Place
@@ -73,7 +73,7 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
                   jobTitle: '',
                   duration: '',
                   address: '',
-                  index: workExperienceInfo.length
+                  id: workExperienceInfo.length
                }
             ]
          )

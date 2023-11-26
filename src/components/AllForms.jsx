@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 
-export default function AllForms({sections, setActiveSectionIndex}) {
+export default function AllForms({sections, setActiveSectionId}) {
    const listItems = sections.map(section =>
-      <li key={section.index} className='all-forms-list-item'>
+      <li key={section.id} className='all-forms-list-item'>
          <button 
             className="all-forms-list-item-button"
             onClick={() => {
-               setActiveSectionIndex(section.index)
+               setActiveSectionId(section.id)
             }}
          >
             {section.titleT}
@@ -25,5 +25,5 @@ export default function AllForms({sections, setActiveSectionIndex}) {
 
 AllForms.propTypes = {
    sections: PropTypes.array.isRequired,
-   setActiveSectionIndex: PropTypes.func.isRequired
+   setActiveSectionId: PropTypes.func.isRequired
 }

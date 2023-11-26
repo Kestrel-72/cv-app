@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 
-export default function FormHeaderNav( {sections, activeSectionIndex, setActiveSectionIndex} ) {
-   const backButton = <button onClick={() => setActiveSectionIndex(activeSectionIndex - 1)}>Back</button>;
-   const nextButton = <button onClick={() => setActiveSectionIndex(activeSectionIndex + 1)}>Next</button>;
+export default function FormHeaderNav( {sections, activeSectionId, setActiveSectionId} ) {
+   const backButton = <button onClick={() => setActiveSectionId(activeSectionId - 1)}>Back</button>;
+   const nextButton = <button onClick={() => setActiveSectionId(activeSectionId + 1)}>Next</button>;
 
-   if (activeSectionIndex === 0) {
+   if (activeSectionId === 0) {
       return (
          <div className="form-nav">
             {nextButton}
          </div>
       )
-   } else if (activeSectionIndex === sections.length - 1) {
+   } else if (activeSectionId === sections.length - 1) {
       return (
          <div className="form-nav">
             {backButton}
@@ -29,6 +29,6 @@ export default function FormHeaderNav( {sections, activeSectionIndex, setActiveS
 
 FormHeaderNav.propTypes = {
    sections: PropTypes.array.isRequired,
-   activeSectionIndex: PropTypes.number.isRequired,
-   setActiveSectionIndex: PropTypes.func.isRequired
+   activeSectionId: PropTypes.number.isRequired,
+   setActiveSectionId: PropTypes.func.isRequired
 }

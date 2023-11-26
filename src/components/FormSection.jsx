@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import FormHeaderNav from './FormHeaderNav';
 
-export default function FormSection( {sections, activeSectionIndex, setActiveSectionIndex} ) {
-   const activeSection = sections.find((section) => section.index === activeSectionIndex);
+export default function FormSection( {sections, activeSectionId, setActiveSectionId} ) {
+   const activeSection = sections.find((section) => section.id === activeSectionId);
    // const pickedSections = sections.filter((section) => section.isPicked === true);
    // console.log(activeSection)
    // console.log({activeSection});
@@ -12,8 +12,8 @@ export default function FormSection( {sections, activeSectionIndex, setActiveSec
          {activeSection.title}
          <FormHeaderNav 
             sections={sections} 
-            activeSectionIndex={activeSectionIndex} 
-            setActiveSectionIndex={setActiveSectionIndex}
+            activeSectionId={activeSectionId} 
+            setActiveSectionId={setActiveSectionId}
          />
          {activeSection.main}
       </div>
@@ -22,6 +22,6 @@ export default function FormSection( {sections, activeSectionIndex, setActiveSec
 
 FormSection.propTypes = {
    sections: PropTypes.array.isRequired,
-   activeSectionIndex: PropTypes.number.isRequired,
-   setActiveSectionIndex: PropTypes.func.isRequired
+   activeSectionId: PropTypes.number.isRequired,
+   setActiveSectionId: PropTypes.func.isRequired
 }

@@ -23,7 +23,7 @@ export default function App() {
             jobTitle: '',
             duration: '',
             address: '',
-            index: 0
+            id: 0
          }
       ]
    );
@@ -48,7 +48,7 @@ export default function App() {
                setPersonalInfo={setPersonalInfo}
             />,
             isPicked: true,
-            index: 0
+            id: 0
          },
          {
             titleT: 'Work experience',
@@ -58,7 +58,7 @@ export default function App() {
                setWorkExperienceInfo={setWorkExperienceInfo}
             />,
             isPicked: true,
-            index: 1
+            id: 1
          },
          {
             titleT: 'Education',
@@ -68,20 +68,20 @@ export default function App() {
                setEducationInfo={setEducationInfo}
             />,
             isPicked: true,
-            index: 2
+            id: 2
          }
       ];
-   const [activeSectionIndex, setActiveSectionIndex] = useState(0);
+   const [activeSectionId, setActiveSectionId] = useState(0);
    return (
       <div className="app">
          <AllForms 
             sections={sections}
-            setActiveSectionIndex={setActiveSectionIndex}
+            setActiveSectionId={setActiveSectionId}
          />
          <FormSection 
             sections={sections} 
-            activeSectionIndex={activeSectionIndex} 
-            setActiveSectionIndex={setActiveSectionIndex}
+            activeSectionId={activeSectionId} 
+            setActiveSectionId={setActiveSectionId}
          />
       </div>
       
