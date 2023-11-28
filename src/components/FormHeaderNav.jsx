@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 
 export default function FormHeaderNav( {sections, activeSectionId, setActiveSectionId} ) {
-   const backButton = <button onClick={() => setActiveSectionId(activeSectionId - 1)}>Back</button>;
-   const nextButton = <button onClick={() => setActiveSectionId(activeSectionId + 1)}>Next</button>;
+   const backButton = <button className='back-button' onClick={() => setActiveSectionId(activeSectionId - 1)}>Back</button>;
+   const nextButton = <button className='next-button' onClick={() => setActiveSectionId(activeSectionId + 1)}>Next</button>;
 
    if (activeSectionId === 0) {
       return (

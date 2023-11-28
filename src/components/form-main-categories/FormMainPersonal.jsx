@@ -8,7 +8,7 @@ export default function FormMainPersonal({personalInfo, setPersonalInfo}) {
       });
    }
    return (
-      <div className="form-main">
+      <div className="form-general-personal">
          <div className="form-main-part">
             <label>Full name</label>
             <input type="text" 

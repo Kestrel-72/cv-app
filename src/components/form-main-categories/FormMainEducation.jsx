@@ -43,14 +43,17 @@ export default function FormMainEducation({educationInfo, setEducationInfo}) {
                />
             </div>
          </div>
-         <button 
-            className="delete-education"
-            onClick={() => {
-               setEducationInfo(deleteForm(educationInfo, item.id));
-            }}
-         >
+         <div className="form-controls">
+            <button 
+               className="delete-education"
+               onClick={() => {
+                  setEducationInfo(deleteForm(educationInfo, item.id));
+               }}
+            >
             Delete Place
-         </button>
+            </button>
+         </div>
+         
       </div>
    )
    const newEducationButton = 
@@ -77,7 +80,10 @@ export default function FormMainEducation({educationInfo, setEducationInfo}) {
          <div className="forms-list">
             {educationItems}
          </div>
-         {newEducationButton}
+         <div className="form-list-controls">
+            {newEducationButton}
+         </div>
+         
       </>
    )
 }

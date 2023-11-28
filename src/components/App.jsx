@@ -77,7 +77,7 @@ export default function App() {
       ];
    const [activeSectionId, setActiveSectionId] = useState(0);
    return (
-      <div className="app">
+      <>
          <AllForms 
             sections={sections}
             setActiveSectionId={setActiveSectionId}
@@ -87,7 +87,6 @@ export default function App() {
             activeSectionId={activeSectionId} 
             setActiveSectionId={setActiveSectionId}
          />
-      </div>
-      
+      </>
    );
 }

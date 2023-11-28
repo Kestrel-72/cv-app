@@ -53,14 +53,16 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
                />
             </div>
          </div>
-         <button 
-            className="delete-exp"
-            onClick={() => {
-               setWorkExperienceInfo(deleteForm(workExperienceInfo, item.id));
-            }}
-         >
-            Delete Place
-         </button>
+         <div className="form-controls">
+            <button 
+               className="delete-exp"
+               onClick={() => {
+                  setWorkExperienceInfo(deleteForm(workExperienceInfo, item.id));
+               }}
+            >
+               Delete Place
+            </button>
+         </div>
       </div> 
    )
    const newWorkExpButton = 
@@ -87,7 +89,9 @@ export default function FormMainWorkExperience({workExperienceInfo, setWorkExper
          <div className="forms-list">
             {workItems}
          </div>
-         {newWorkExpButton}
+         <div className="form-list-controls">
+            {newWorkExpButton}
+         </div>
       </>
    )
 }

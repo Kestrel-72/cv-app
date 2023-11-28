@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 16px;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -12,6 +13,98 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#root {
+   display: grid;
+   grid-template-columns: 300px 1fr;
+   width: 1200px;
+   margin: 100px auto;
+}
+
+.all-forms {
+   height: max-content;
+}
+
+.all-forms-list {
+   display: flex;
+   flex-direction: column;
+   list-style: none;
+   padding: 0;
+}
+
+.form-header > h1 {
+   margin: 0;
+}
+
+.form-nav {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 1rem;
+}
+
+.back-button {
+   grid-column: 1 / 2;
+}
+
+.next-button {
+   grid-column: 2 / 3;
+}
+
+.form-section {
+   display: grid;
+   grid-template-columns: 1fr 200px;
+   grid-template-rows: max-content 1fr 50px;
+}
+
+.forms-list {
+   display: flex;
+   flex-direction: column;
+}
+
+.form-general-personal, .form-general {
+   padding: 20px 0;
+}
+
+.form-general {
+   display: grid;
+   grid-template-columns: 1fr 200px;
+   grid-template-rows: 3rem 1fr;
+}
+
+.form-header {
+   margin: 0;
+}
+
+.form-general-personal, .form-main {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.form-main {
+   grid-column: 1 / 2;
+}
+
+.form-main-part {
+   display: flex;
+   flex-direction: column;
+   width: 400px;
+}
+
+.form-main-part > input {
+   height: 2rem;
+   font-size: 1.2rem;
+   padding: 0 0.5rem;
+}
+
+.form-controls {
+   grid-column: 2 / 3;
+   grid-row: 1 / 2;
+}
+
+.form-list-controls {
+   grid-area: 3 / 1 / 4 / 2;
 }
 
 a {
@@ -25,8 +118,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
